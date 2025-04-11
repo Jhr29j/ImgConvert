@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de Imágenes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="img/Icon.png">
+</head>
+<body>
+    
+    <div class="container">
+        <img src="img/Logotipo1.0.png" alt="Logo" class="Logotipo">
+        
+        <div class="file-input-container">
+            <input type="file" id="uploadImage" accept="image/*">
+            <div class="upload-content">
+                <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                <span class="drop-text">Haz clic o arrastra tu imagen aquí</span>             
+                <span class="file-status">Sin archivos seleccionados</span>
+            </div>
+        </div>
+        
+        <img id="previewImage" class="hidden">
+        
+        <select id="formatSelect">
+            <option value="png">PNG</option>
+            <option value="jpeg">JPG</option>
+            <option value="webp">WEBP</option>
+            <option value="bmp">BMP</option>
+            <option value="tiff">TIFF</option>
+            <option value="gif">GIF</option>
+            <option value="ico">ICO (Icono)</option>
+            <option value="heif">HEIF</option>
+            <option value="avif">AVIF</option>
+        </select>
+
+        <button id="convertBtn"><i class="fas fa-exchange-alt"></i> Convertir</button>
+        <a id="downloadLink" class="hidden"><i class="fas fa-download"></i> Descargar</a>
+
+        <canvas id="canvas" style="display:none"></canvas>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/icojs@1.0.2/dist/ico.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

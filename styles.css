@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    background-color: #1e1e1e;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+body:nth-child(1) { animation-delay: 0.3s; }
+body:nth-child(2) { animation-delay: 0.6s; }
+body:nth-child(2) { animation-delay: 0.9s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px 30px 30px;
+    background-color: #121212;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: visible;
+}
+
+.Logotipo {
+    max-width: 80%;
+    height: auto;
+    margin: -40px auto -30px;
+    display: block;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.Logotipo:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.file-input-container {
+    border: 2px dashed #4361ee;
+    border-radius: 8px;
+    padding: 30px 15px;
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.file-input-container:hover {
+    border-color: #4cc9f0;
+    background-color: #2a2a2a;
+}
+
+.upload-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-icon {
+    font-size: 2.5rem;
+    color: #4361ee;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.file-input-container:hover .upload-icon {
+    transform: translateY(-5px);
+    color: #4cc9f0;
+}
+
+.drop-text {
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.file-status {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+#uploadImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#previewImage {
+    max-width: 100%;
+    max-height: 400px;
+    margin: 0 auto 25px;
+    border-radius: 8px;
+    border: 2px solid #4361ee;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+#previewImage:hover {
+    border-color: #4cc9f0;
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#formatSelect {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #4361ee;
+    background-color: #2a2a2a;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+#formatSelect:hover {
+    border-color: #4cc9f0;
+}
+
+#convertBtn, #downloadLink {
+    width: 100%;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 15px;
+    border: none;
+    text-decoration: none;
+}
+
+#convertBtn {
+    background-color: #4361ee;
+    color: white;
+}
+
+#convertBtn:hover {
+    background-color: #4cc9f0;
+}
+
+#convertBtn.loading {
+    background-color: #3a56d4;
+    cursor: wait;
+}
+
+#downloadLink {
+    background-color: #2ecc46;
+    color: white;
+    margin-bottom: 0;
+}
+
+#downloadLink:hover {
+    background-color: #58cf64;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .container {
+        padding: 15px 20px 25px;
+    }
+    
+    .Logotipo {
+        max-width: 70%;
+        margin: -30px auto -20px;
+    }
+    
+    .file-input-container {
+        padding: 25px 10px;
+    }
+    
+    .upload-icon {
+        font-size: 2rem;
+    }
+    
+    #previewImage {
+        max-height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px 15px 20px;
+    }
+    
+    .Logotipo {
+        max-width: 65%;
+        margin: -20px auto -15px;
+    }
+    
+    .file-input-container {
+        padding: 20px 10px;
+    }
+    
+    .upload-icon {
+        font-size: 1.8rem;
+    }
+    
+    .drop-text {
+        font-size: 0.9rem;
+    }
+    
+    #previewImage {
+        max-height: 200px;
+    }
+    
+    #convertBtn, #downloadLink {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+}
